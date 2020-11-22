@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-05-06T13:52:09 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="release_order_new" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1dfb30e3-aff8-435b-be90-de44c0462e75">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="online.xml"/>
+	<parameter name="bc_no" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[select * from booking_confirmation where BC_No =  $P{bc_no}]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer"/>
+	<field name="BC_No" class="java.lang.String"/>
+	<field name="BC_Date" class="java.sql.Date"/>
+	<field name="shipper" class="java.lang.String"/>
+	<field name="shipper_address" class="java.lang.String"/>
+	<field name="shipper_tel" class="java.lang.String"/>
+	<field name="shipper_fax" class="java.lang.String"/>
+	<field name="client" class="java.lang.String"/>
+	<field name="client_address" class="java.lang.String"/>
+	<field name="client_tel" class="java.lang.String"/>
+	<field name="client_fax" class="java.lang.String"/>
+	<field name="portnet_ref" class="java.lang.String"/>
+	<field name="vendor" class="java.lang.String"/>
+	<field name="port_of_loading" class="java.lang.String"/>
+	<field name="port_of_discharge" class="java.lang.String"/>
+	<field name="place_of_delivery" class="java.lang.String"/>
+	<field name="place_of_receipt" class="java.lang.String"/>
+	<field name="des" class="java.lang.String"/>
+	<field name="ETA" class="java.sql.Date"/>
+	<field name="closing_date" class="java.sql.Timestamp"/>
+	<field name="etd" class="java.sql.Date"/>
+	<field name="eta_pod" class="java.sql.Date"/>
+	<field name="vessel_voyage" class="java.lang.String"/>
+	<field name="measurement" class="java.lang.String"/>
+	<field name="type_of_shipment" class="java.lang.String"/>
+	<field name="release_reference" class="java.lang.String"/>
+	<field name="gross_weight" class="java.lang.String"/>
+	<field name="type_of_unit" class="java.lang.String"/>
+	<field name="yard" class="java.lang.String"/>
+	<field name="yard_address" class="java.lang.String"/>
+	<field name="yard_tel" class="java.lang.String"/>
+	<field name="yard_fax" class="java.lang.String"/>
+	<field name="quantity_of_unit" class="java.lang.String"/>
+	<field name="remarks" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="client_code" class="java.lang.String"/>
+	<field name="created_by" class="java.lang.String"/>
+	<field name="created_date" class="java.sql.Timestamp"/>
+	<field name="modified_by" class="java.lang.String"/>
+	<field name="deleted" class="java.lang.Integer"/>
+	<field name="deleted_date" class="java.sql.Timestamp"/>
+	<field name="deleted_by" class="java.lang.String"/>
+	<variable name="bc_date" class="java.lang.String">
+		<variableExpression><![CDATA[(new SimpleDateFormat("YYYY-MM-dd").format($F{BC_Date}))]]></variableExpression>
+	</variable>
+	<variable name="eta_date" class="java.lang.String">
+		<variableExpression><![CDATA[(new SimpleDateFormat("YYYY-MM-dd").format($F{ETA}))]]></variableExpression>
+	</variable>
+	<variable name="closing_date" class="java.lang.String">
+		<variableExpression><![CDATA[(new SimpleDateFormat("YYYY-MM-dd").format($F{closing_date}))]]></variableExpression>
+	</variable>
+	<variable name="etd_date" class="java.lang.String">
+		<variableExpression><![CDATA[(new SimpleDateFormat("YYYY-MM-dd").format($F{etd}))]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="0" width="200" height="30" uuid="cc545812-8923-4719-ac54-f34b3b814039"/>
+				<textElement>
+					<font fontName="DejaVu Sans" size="16" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Booking Confirmation]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="28" width="131" height="20" uuid="3c41cf57-e002-49af-917c-00c08901b159"/>
+				<text><![CDATA[Booking Confirmation No.]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement x="0" y="48" width="131" height="30" uuid="23ec849a-d3f6-4709-91de-fcf7f9683769"/>
+				<jr:Code128 xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<jr:codeExpression><![CDATA[$F{BC_No}]]></jr:codeExpression>
+				</jr:Code128>
+			</componentElement>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="376" splitType="Stretch">
+			<rectangle>
+				<reportElement x="0" y="273" width="200" height="100" uuid="18979e9d-f6b2-48f5-a658-c6ec91e73cf4"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement x="20" y="60" width="200" height="100" uuid="69a3b36e-c6a8-419b-bd79-4b476ce4e12a"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement x="-1" y="30" width="132" height="20" uuid="5e73bb85-5aba-4595-b622-69b3a59ceaf0"/>
+				<text><![CDATA[Quotation No.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="10" width="140" height="20" uuid="b81d525a-38ca-467a-b43b-1dd50bcde43d"/>
+				<text><![CDATA[Booking Confirmation Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="21" y="61" width="197" height="19" forecolor="#000000" backcolor="#F0F0FF" uuid="1cae0006-669c-4e42-b6dd-2b08ecda8f22"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[  Shipper ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="25" y="81" width="194" height="20" uuid="e9db7c48-e96f-4639-a69a-60211009cee1">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{shipper}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="25" y="99" width="194" height="40" uuid="f57cc277-f1b9-4f33-86e1-be2f19206da2">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{shipper_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="23" y="139" width="100" height="20" uuid="49a78a23-c660-43f6-8fb7-890987bcdbb7"/>
+				<textFieldExpression><![CDATA[$F{shipper_tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="139" width="94" height="20" uuid="740ef6b5-b9f5-41de-9ff4-482dec45d057"/>
+				<textFieldExpression><![CDATA[$F{shipper_fax}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="331" y="59" width="200" height="100" uuid="d35876c3-a2d3-4a6a-90cf-606276cd8897"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="334" y="60" width="197" height="19" forecolor="#000000" backcolor="#F0F0FF" uuid="81ec4b16-6c65-4c00-b930-a067c820f8df"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[  Client]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="337" y="81" width="194" height="20" uuid="4d3f8cb5-b013-4155-a5b6-dda68e3eea05"/>
+				<textFieldExpression><![CDATA[$F{client}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="99" width="194" height="40" uuid="b97750f3-2c53-4452-b1b3-7f580f775c62"/>
+				<textFieldExpression><![CDATA[$F{client_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="139" width="100" height="20" uuid="7d187655-705a-4a78-89c1-a8bcb63c0d5a"/>
+				<textFieldExpression><![CDATA[$F{client_tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="437" y="139" width="94" height="20" uuid="373e529d-523a-4b92-b52c-78f3361a4b5b"/>
+				<textFieldExpression><![CDATA[$F{client_fax}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="174" width="100" height="18" uuid="b7175750-d0e8-457f-9ec0-dd2221dc8ca4"/>
+				<text><![CDATA[Portnet Ref:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="280" y="232" width="82" height="20" uuid="4701ce3f-5f82-4cf0-8631-20bfbe10fe12"/>
+				<text><![CDATA[ETA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="232" width="81" height="18" uuid="38c28a79-3e0d-4495-8604-0effd8e1ae5f"/>
+				<text><![CDATA[Place of Delivery]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="198" width="100" height="16" uuid="e72ffc81-54fa-4d34-b0ef-31eba0b321b3"/>
+				<text><![CDATA[Port of Loading]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-1" y="214" width="100" height="16" uuid="20032b10-f8d1-4400-93ac-c41e3b86f2a7"/>
+				<text><![CDATA[Port of Discharge]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="79" y="198" width="191" height="16" uuid="8b72cbc3-6c68-409a-9fdd-e9554e82dd7b"/>
+				<textFieldExpression><![CDATA[$F{port_of_loading}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="79" y="214" width="191" height="16" uuid="0cbd41ab-cd49-45c7-bc78-e55d4d04bc94"/>
+				<textFieldExpression><![CDATA[$F{port_of_discharge}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="281" y="174" width="126" height="18" uuid="d7994790-c162-4763-8be9-32f8d9d1e1a6"/>
+				<text><![CDATA[Type of Unit]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="174" width="159" height="18" uuid="ac411f28-2af8-4e0c-a5c3-3f986d8d77e3"/>
+				<textFieldExpression><![CDATA[$F{type_of_unit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="281" y="196" width="62" height="13" uuid="00b9694a-f8aa-4c21-b0e2-c799ab39096a"/>
+				<text><![CDATA[Nos of Units]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="196" width="206" height="13" uuid="11f52d47-01b7-40c3-a862-61ad2b2efda3"/>
+				<textFieldExpression><![CDATA[$F{quantity_of_unit}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="214" width="116" height="13" uuid="242139af-f7a0-4666-9538-7094b2041a57"/>
+				<text><![CDATA[Gross Weight]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="214" width="206" height="13" uuid="0b35097d-c539-4b58-a39d-8d3592e45496"/>
+				<textFieldExpression><![CDATA[$F{gross_weight}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="281" y="316" width="116" height="14" uuid="57ca8f05-b2b6-4568-88c2-9e9b11b0cd6f"/>
+				<text><![CDATA[Measurement]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="316" width="186" height="14" uuid="e7825962-77f7-4efb-bb2d-ad6a6dfad025"/>
+				<textFieldExpression><![CDATA[$F{measurement}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="298" width="116" height="16" uuid="6970f64a-0923-48df-ba51-bb7afd5ec3bd"/>
+				<text><![CDATA[Vessel / Voyage]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="10" width="100" height="20" uuid="aedb0cc3-c18f-42ce-ada2-1c4650f08851"/>
+				<textFieldExpression><![CDATA[$V{bc_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="174" width="130" height="18" uuid="863e4b61-e6fc-4d84-a059-6b66461ef89c"/>
+				<textFieldExpression><![CDATA[$F{portnet_ref}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="232" width="99" height="20" uuid="691540a6-ec47-447a-8692-088c0f0d9e39"/>
+				<textFieldExpression><![CDATA[$V{eta_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="256" width="100" height="20" uuid="e01a7049-c66c-42d8-a518-8a279673b4b4"/>
+				<text><![CDATA[Closing Date/Time]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="256" width="129" height="20" uuid="3fe8d718-644a-4dc7-99ec-2e93807304f9"/>
+				<textFieldExpression><![CDATA[$V{closing_date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="80" y="232" width="190" height="18" uuid="6421b274-cc2a-41f6-95bc-3eb3d2a360e1"/>
+				<textFieldExpression><![CDATA[$F{place_of_delivery}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="252" width="81" height="18" uuid="bfaee3f6-8f7d-4322-885e-9275051e5512"/>
+				<text><![CDATA[Place of Receipt]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="80" y="252" width="190" height="18" uuid="85b20883-eb8c-462e-ba14-a3ec23076b02"/>
+				<textFieldExpression><![CDATA[$F{place_of_receipt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="354" width="100" height="18" uuid="bfa592b3-2c23-437f-8101-479b074224ed"/>
+				<text><![CDATA[Type of Shipment]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="353" width="90" height="19" uuid="866a9e38-7532-4171-ba33-352f9591daa8"/>
+				<textFieldExpression><![CDATA[$F{type_of_shipment}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="298" width="100" height="16" uuid="2ed94e38-7f2a-4a55-959c-56dc358d30ee"/>
+				<textFieldExpression><![CDATA[$F{vessel_voyage}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="280" width="100" height="15" uuid="6f7522a1-e1ea-46c4-b942-87a6a6f44931"/>
+				<text><![CDATA[ETD]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="280" width="129" height="18" uuid="531cbb6b-d892-4f2f-80c2-f98d9ff63633"/>
+				<textFieldExpression><![CDATA[$V{etd_date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="280" y="334" width="100" height="20" uuid="eda9f9ad-95b4-4703-bcd8-dc514cd16a44"/>
+				<text><![CDATA[Release Ref:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="371" y="334" width="180" height="20" uuid="f308448c-3969-4167-bdce-eb45f96e4f62"/>
+				<textFieldExpression><![CDATA[$F{release_reference}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="3" y="274" width="197" height="19" forecolor="#000000" backcolor="#F0F0FF" uuid="f627c3e1-5371-4c09-9975-29e18a3a8144"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[  Warehouse / Container Depo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="6" y="293" width="194" height="20" uuid="e998b6bb-09be-4758-ba3b-6b2672bfa231"/>
+				<textFieldExpression><![CDATA[$F{yard}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="313" width="194" height="40" uuid="e6aa555a-41c0-47cb-8242-8da7756db241"/>
+				<textFieldExpression><![CDATA[$F{yard_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="6" y="353" width="104" height="20" uuid="8794a916-b57a-4387-b97b-40dff2ba4c7e"/>
+				<textFieldExpression><![CDATA[$F{yard_tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="110" y="353" width="90" height="20" uuid="67e01ca2-0b01-498f-b5b7-79866e7dc48d"/>
+				<textFieldExpression><![CDATA[$F{yard_fax}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="10" splitType="Stretch"/>
+	</columnHeader>
+	<pageFooter>
+		<band height="304" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="10" width="550" height="199" uuid="581dcc11-8fa1-491d-8999-af474a52ceea"/>
+				<graphicElement>
+					<pen lineStyle="Dashed"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="5" y="11" width="547" height="19" forecolor="#000000" backcolor="#F0F0FF" uuid="f1deb3a8-399e-4e8c-a41a-9c5f8e014b3b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="DejaVu Sans"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[  Terms and Conditions]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="278" width="70" height="20" uuid="35749e7d-5ed3-4e42-8424-69857fdce3ad"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Created by]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="70" y="278" width="170" height="20" uuid="a2fcde30-2928-40ab-b311-16532a36fc03"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{created_by}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="279" width="110" height="20" uuid="f72e2007-2bc1-4ce4-a8f7-a40dd09f903f"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="480" y="279" width="70" height="20" uuid="6e1c8f0c-d2fd-4e00-99f6-136da0bd49fc"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

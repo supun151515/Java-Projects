@@ -1,0 +1,599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.3.1.final using JasperReports Library version 6.3.1  -->
+<!-- 2017-04-28T22:40:41 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="bl_draft" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ee86ab3b-9e88-4657-b548-fd9d2fae3f77">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bl_extremeIT"/>
+	<parameter name="bl_no" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT bill_of_lading.*, bill_of_lading_sub.container_no, bill_of_lading_sub.seal_no, bill_of_lading_sub.marks, bill_of_lading_sub.package_quantity, bill_of_lading_sub.des, bill_of_lading_sub.gross_weight, bill_of_lading_sub.measurement FROM bill_of_lading RIGHT JOIN bill_of_lading_sub ON bill_of_lading.ID = bill_of_lading_sub.BL_ID WHERE bill_of_lading.BL_No =  $P{bl_no};]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer"/>
+	<field name="BL_No" class="java.lang.String"/>
+	<field name="BL_Date" class="java.sql.Date"/>
+	<field name="bc_no" class="java.lang.String"/>
+	<field name="shipper" class="java.lang.String"/>
+	<field name="shipper_address" class="java.lang.String"/>
+	<field name="shipper_tel" class="java.lang.String"/>
+	<field name="shipper_fax" class="java.lang.String"/>
+	<field name="export_references" class="java.lang.String"/>
+	<field name="consignee" class="java.lang.String"/>
+	<field name="consignee_address" class="java.lang.String"/>
+	<field name="consignee_tel" class="java.lang.String"/>
+	<field name="consignee_fax" class="java.lang.String"/>
+	<field name="forwarding_agent" class="java.lang.String"/>
+	<field name="forwarding_agent_address" class="java.lang.String"/>
+	<field name="notify_party" class="java.lang.String"/>
+	<field name="notify_party_address" class="java.lang.String"/>
+	<field name="notify_party_tel" class="java.lang.String"/>
+	<field name="notify_party_fax" class="java.lang.String"/>
+	<field name="port_of_loading" class="java.lang.String"/>
+	<field name="port_of_discharge" class="java.lang.String"/>
+	<field name="final_destination" class="java.lang.String"/>
+	<field name="pre_carriage_by" class="java.lang.String"/>
+	<field name="place_of_receipt" class="java.lang.String"/>
+	<field name="ship_on_board_date" class="java.sql.Date"/>
+	<field name="origin_of_goods" class="java.lang.String"/>
+	<field name="bl_to_be_released" class="java.lang.String"/>
+	<field name="vessel_voyage" class="java.lang.String"/>
+	<field name="ocean_freight" class="java.lang.String"/>
+	<field name="ocean_freight_payable" class="java.lang.String"/>
+	<field name="traffic_mode" class="java.lang.String"/>
+	<field name="nos_of_bls" class="java.lang.String"/>
+	<field name="bl_type" class="java.lang.String"/>
+	<field name="special_instructions" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="status2" class="java.lang.String"/>
+	<field name="client_code" class="java.lang.String"/>
+	<field name="comments" class="java.lang.String"/>
+	<field name="print" class="java.lang.String"/>
+	<field name="created_by" class="java.lang.String"/>
+	<field name="created_date" class="java.sql.Timestamp"/>
+	<field name="modified_by" class="java.lang.String"/>
+	<field name="modified_date" class="java.sql.Timestamp"/>
+	<field name="container_no" class="java.lang.String"/>
+	<field name="seal_no" class="java.lang.String"/>
+	<field name="marks" class="java.lang.String"/>
+	<field name="package_quantity" class="java.lang.String"/>
+	<field name="des" class="java.lang.String"/>
+	<field name="gross_weight" class="java.math.BigDecimal"/>
+	<field name="measurement" class="java.lang.String"/>
+	<variable name="gross_weight1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{gross_weight}]]></variableExpression>
+	</variable>
+	<variable name="Variable_1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="451" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-8" y="260" width="570" height="161" forecolor="#C800FF" uuid="c8fa4ed8-25a9-4a2a-88ba-b9d2dddfbea1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="-8" y="259" width="570" height="41" forecolor="#2A00FF" uuid="a0b6a6d6-ec01-4864-a859-2cf8c8800608"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="180" y="263" width="200" height="17" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="b1ced016-0e7a-42d2-8917-0975a5c8cdf1"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[PORT OF DISCHARGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="-7" y="263" width="187" height="17" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="de37b2e1-61fe-41d3-b2a7-8b67f0c66b09"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[PORT OF LOADING]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-8" y="151" width="570" height="90" forecolor="#C800FF" uuid="0d700e5d-1e20-40f7-9c95-a5499cb6fe40"/>
+			</rectangle>
+			<staticText>
+				<reportElement mode="Opaque" x="281" y="152" width="279" height="20" forecolor="#8400FF" backcolor="#FFF0F0" uuid="12ee64cd-2839-48b1-947d-6f74c1a4cefd"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[NOTIFY PARTY]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-8" y="242" width="570" height="21" forecolor="#C800FF" uuid="cd459334-6a7b-4082-92ca-202c8174b04b"/>
+			</rectangle>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="0" width="100" height="20" forecolor="#8800FF" uuid="e945d840-1000-4c69-b1b4-319e229df0c1"/>
+				<text><![CDATA[BILL OF LADING NO.]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="100" y="0" width="180" height="20" forecolor="#8800FF" uuid="caae42c6-44be-4298-9084-6eeb76b7156f"/>
+				<textFieldExpression><![CDATA[$F{BL_No}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="-8" y="60" width="570" height="90" forecolor="#C800FF" uuid="6b90576b-4db5-4a5e-bf85-284c3a0516a5"/>
+			</rectangle>
+			<line>
+				<reportElement x="280" y="60" width="1" height="201" uuid="12945832-7cb9-4fb4-b6a1-cb589f1f5de5"/>
+			</line>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" mode="Opaque" x="-7" y="61" width="287" height="20" forecolor="#C800FF" backcolor="#FFF0F0" uuid="659964c0-96bd-4780-b7d1-6b0e5fe75014"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[SHIPPER]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-8" y="81" width="288" height="19" forecolor="#C800FF" uuid="df9d4501-44a0-44a0-8252-385f3c4a46a7"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{shipper}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-7" y="100" width="287" height="30" forecolor="#C800FF" uuid="7ca291cb-bddb-489f-8163-984d5e95bcb5"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{shipper_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-7" y="130" width="147" height="20" forecolor="#C800FF" uuid="34ead358-cb56-457b-95b3-30b6338a917a"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{shipper_tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="130" width="140" height="20" forecolor="#C800FF" uuid="a3beef30-8d6f-43ad-9025-c04fe0373e4e"/>
+				<textFieldExpression><![CDATA[$F{shipper_fax}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="281" y="61" width="279" height="20" forecolor="#C800FF" backcolor="#FFF0F0" uuid="047246c5-eb93-4243-8b6f-ab01c376a30e"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[AGENT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="280" y="80" width="282" height="20" forecolor="#C800FF" uuid="db728041-97ad-44e7-8841-a3be04663e47"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{forwarding_agent}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="280" y="100" width="280" height="30" forecolor="#C800FF" uuid="d2a3c8ce-4cd5-4473-be66-d45b84e6f437"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{forwarding_agent_address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="-7" y="152" width="287" height="20" forecolor="#C800FF" backcolor="#FFF0F0" uuid="b8ca8b29-bcf2-47d3-bb58-670347a8ec9a"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[CONSIGNEE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-7" y="172" width="288" height="19" forecolor="#C800FF" uuid="78480e38-b175-4433-aeee-c21368bf1d1b"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{consignee}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-8" y="190" width="288" height="30" forecolor="#C800FF" uuid="52ddb36c-0733-4844-99dd-37de54693f33"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{consignee_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="-8" y="220" width="148" height="21" forecolor="#C800FF" uuid="de5cdfa6-0b7b-4eb0-b3a9-b597621d6388"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{consignee_tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="221" width="140" height="19" forecolor="#C800FF" uuid="3faf2138-7be8-4440-92a9-82e9dbaa8128"/>
+				<textFieldExpression><![CDATA[$F{consignee_fax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="172" width="280" height="20" forecolor="#C800FF" uuid="36b742fc-7c4d-49a8-a9df-40cd53ee61fa"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{notify_party}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="190" width="279" height="30" forecolor="#C800FF" uuid="da2c0a8a-34b5-4a22-b8e6-b1954fec8a53"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{notify_party_address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="281" y="221" width="149" height="20" forecolor="#C800FF" uuid="86603fa6-1620-41b7-8354-1896e202321c"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{notify_party_tel}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="220" width="132" height="20" forecolor="#C800FF" uuid="e714c9a3-5c61-4a03-99a6-b724ab971a1f"/>
+				<textFieldExpression><![CDATA[$F{notify_party_fax}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-2" y="244" width="132" height="15" forecolor="#C800FF" uuid="030f3a81-5b88-4f18-a8ff-052eea6fb3d7"/>
+				<text><![CDATA[Booking Confirmation No.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="120" y="241" width="160" height="18" forecolor="#C800FF" uuid="849fb3f0-04c4-4719-8ca1-b2736574c478"/>
+				<box topPadding="3" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{bc_no}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="287" y="244" width="100" height="17" forecolor="#AE00FF" uuid="afa88d24-616e-41b6-b830-c8a8015aa815"/>
+				<text><![CDATA[Export References:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="376" y="244" width="184" height="15" forecolor="#8400FF" uuid="6e80d09e-e50e-49ad-94db-82735e29f253"/>
+				<textFieldExpression><![CDATA[$F{export_references}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="380" y="263" width="2" height="119" forecolor="#2A00FF" uuid="a6f75c58-8586-4a92-ad3f-ab3bf0a254d9"/>
+			</line>
+			<line>
+				<reportElement x="-7" y="341" width="570" height="1" forecolor="#2A00FF" uuid="51616679-a895-430b-ac61-3d01b6fba9f7"/>
+			</line>
+			<textField>
+				<reportElement x="-7" y="280" width="188" height="20" forecolor="#2A00FF" uuid="409caaee-3cfc-44cc-a94c-9a7c9875b893"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{port_of_loading}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="280" width="201" height="20" forecolor="#2A00FF" uuid="c899cad8-f016-45d2-9551-c834d4385331"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{port_of_discharge}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="381" y="264" width="180" height="17" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="c0406e2c-f8d6-4055-bdce-a97335e9fbe8"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[FINAL DESTINATION]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="381" y="280" width="181" height="20" forecolor="#2A00FF" uuid="8d457628-bbc0-4550-a04b-d99e10c59be9"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{final_destination}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="180" y="263" width="1" height="158" forecolor="#2A00FF" uuid="8c74de5c-4f49-46f7-a60f-056c1ee7dfff"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="-6" y="301" width="186" height="18" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="19ea3a55-e341-4273-b71f-e394ae9522ac"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[PRE-CARRIAGE BY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="181" y="301" width="199" height="18" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="95d5b13b-cefc-4f0a-a649-0f3d30b7ad80"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[OCEAN FREIGHT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="382" y="301" width="179" height="20" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="595c52b9-f527-4375-93b1-ff757a80900d"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[OCEAN FREIGHT PAYABLE AT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-6" y="321" width="186" height="21" forecolor="#2A00FF" uuid="10ab4152-2c72-4c42-9277-f6633765195d"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{pre_carriage_by}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="321" width="200" height="21" forecolor="#2A00FF" uuid="6a83b150-7990-4572-abad-18d25b9c5ba2"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{ocean_freight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="321" width="178" height="20" forecolor="#2A00FF" uuid="0ba914d4-8df7-443e-ba31-a332c9d3a89f"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{ocean_freight_payable}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="-9" y="381" width="572" height="1" forecolor="#2A00FF" uuid="dbc073f3-da3f-4803-b97e-168e430de2b5"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="-6" y="342" width="186" height="17" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="f62030c4-2a64-405d-980d-8c2d0032ab56"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[VESSEL/VOYAGE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="181" y="342" width="199" height="17" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="17702887-a4f6-4909-a263-a103422a982d"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[TRAFFIC MODE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="382" y="342" width="179" height="19" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="e2b2cd71-989a-452e-83e7-a091f59d7aa1"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[NUMBER OF B/Ls]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-6" y="360" width="186" height="21" forecolor="#2A00FF" uuid="c261007e-07c1-4e0d-8d0f-5bf2ed404863"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{vessel_voyage}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="180" y="361" width="200" height="21" forecolor="#2A00FF" uuid="9febbc7e-9d9a-4e8d-b3f7-36e0d655fc2e"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{traffic_mode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="382" y="361" width="178" height="20" forecolor="#2A00FF" uuid="8990a6e3-45a6-4d6c-8291-781e37d2db44"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{nos_of_bls}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement mode="Opaque" x="-7" y="382" width="186" height="17" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="a5c48a08-942d-4410-a6a5-125c6188b8fd"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[ORIGIN OF GOODS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="181" y="382" width="379" height="17" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="a3800215-7e22-4e10-bb5f-e52f8d3fe5ac"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<text><![CDATA[PLACE OF RECEIPT]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-6" y="400" width="185" height="21" forecolor="#2A00FF" uuid="dd8239ce-f332-43c6-a245-3d696a367d9c"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{origin_of_goods}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="181" y="400" width="382" height="21" forecolor="#2A00FF" uuid="e43449c0-21c9-4fb1-a86d-3dc14d530082"/>
+				<box topPadding="3" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{place_of_receipt}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="-8" y="421" width="570" height="30" forecolor="#2A00FF" backcolor="#FFF0F0" uuid="f8573efd-5147-49a8-92a2-c72abbe6ab8d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-8" y="421" width="571" height="30" forecolor="#2A00FF" uuid="8bbbb5ab-dfc2-407d-83f8-ba6f6d857eec"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[
+PARTICULARS DECLARED BY SHIPPER BUT NOT ACKNOWLEDGED BY THE CARRIER]]></text>
+			</staticText>
+			<image>
+				<reportElement x="490" y="0" width="70" height="50" uuid="72b4d6bb-291e-48af-84fe-9c51f51ab2ac"/>
+				<imageExpression><![CDATA["http://uzunetap.com/files/uploads/master-logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue() != 1 ? new Boolean(true) : new Boolean(false)]]></printWhenExpression>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" forecolor="#2A00FF" uuid="65b9b9a1-e61d-4efc-a609-dab1e3b431ef"/>
+				<text><![CDATA[BILL OF LADING NO.]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="0" width="180" height="20" forecolor="#2A00FF" uuid="04efa056-0565-4a0b-ba5c-f8c1c1bbfed6"/>
+				<textFieldExpression><![CDATA[$F{BL_No}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="490" y="0" width="70" height="50" uuid="e5f7a645-927e-49c1-9be3-8d9a8a95517b"/>
+				<imageExpression><![CDATA["http://uzunetap.com/files/uploads/master-logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<rectangle>
+				<reportElement x="-8" y="-2" width="570" height="23" forecolor="#7605FF" backcolor="#FFF0F0" uuid="d4508fd1-f90b-4c5d-b974-65400811c02f"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="-2" y="3" width="82" height="20" forecolor="#7605FF" uuid="b0c8cfbb-533d-4d13-9c28-bc0016b8a11c"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[CONTAINER NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="4" width="68" height="18" forecolor="#7605FF" uuid="f0056591-c798-440c-bad4-cb82b7f9c086"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[SEAL NO.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="5" width="57" height="16" forecolor="#7605FF" uuid="e816e25a-1c84-4b5d-b53f-a3f37c652f5c"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MARKS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="221" y="5" width="39" height="15" forecolor="#7605FF" uuid="84b63567-cfff-40f3-b507-e84762b96562"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[PKG QTY]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="5" width="168" height="17" forecolor="#7605FF" uuid="ba29e91c-83ec-41df-b7a3-71ea21279804"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPTION OF PACKAGES AND GOODS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="430" y="5" width="60" height="15" forecolor="#7605FF" uuid="c0cdd16b-b1ed-42b8-8e48-6124a406ac29"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[GRS WET(KG)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="490" y="5" width="70" height="15" forecolor="#7605FF" uuid="a2e9a034-a47e-44d4-9179-8d2fd3dcd2fb"/>
+				<textElement>
+					<font size="8" isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[MEASUREMENT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Opaque" x="-8" y="-3" width="570" height="21" forecolor="#7605FF" backcolor="#FFF0F0" uuid="8b8d0950-940e-441e-b166-bd800c157cd0"/>
+				<graphicElement>
+					<pen lineStyle="Dotted" lineColor="#000000"/>
+				</graphicElement>
+			</rectangle>
+			<textField>
+				<reportElement x="-2" y="0" width="82" height="19" forecolor="#7605FF" uuid="7358d3ea-e73d-4b74-82ed-1d296f099a78"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{container_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="0" width="68" height="19" forecolor="#7605FF" uuid="3d4623e2-d6c8-4827-a2b5-defe42fcd8e1"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{seal_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="71" height="19" forecolor="#7605FF" uuid="2f1712f3-0b74-4bbc-8a31-7e37b7269a91"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{marks}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="-1" width="39" height="20" forecolor="#7605FF" uuid="3e17df94-45a2-43a6-b44b-eb3c38515f03"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{package_quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="-2" width="168" height="21" forecolor="#7605FF" uuid="96dbcf6b-08ac-4aad-b959-1cd14b096eb3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{des}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="-1" width="50" height="20" forecolor="#7605FF" uuid="7ef98cfc-0e80-4244-828b-a4f5c90fec27"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gross_weight}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="0" width="80" height="19" forecolor="#7605FF" uuid="1d260673-da34-48f3-bde6-72d6ea7cadbe"/>
+				<textFieldExpression><![CDATA[$F{measurement}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="186" splitType="Stretch">
+			<staticText>
+				<reportElement x="-8" y="16" width="568" height="50" forecolor="#6F1CFF" uuid="2b9a1ab8-90a9-4e3c-9f2e-eb8100a6f4dc"/>
+				<box topPadding="0" leftPadding="5" bottomPadding="0" rightPadding="0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[SPECIAL INSTRUCTIONS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="-10" y="69" width="572" height="64" uuid="199e6272-1a6a-4092-809b-fd6d1cb3a539"/>
+			</rectangle>
+			<line>
+				<reportElement x="184" y="70" width="1" height="63" forecolor="#9000FF" uuid="c6d62cb4-ae37-49c7-a4bc-af804d520e0b"/>
+			</line>
+			<line>
+				<reportElement x="380" y="69" width="1" height="64" forecolor="#9000FF" uuid="4f5fd5c6-348c-418c-be0e-df915497a247"/>
+			</line>
+			<line>
+				<reportElement x="-10" y="117" width="194" height="1" uuid="4e4ff27e-8537-484b-bc2b-6eb3dffcdbee"/>
+			</line>
+			<staticText>
+				<reportElement x="-4" y="76" width="134" height="14" forecolor="#590DFC" uuid="086a2f6a-c792-4cc9-ba6f-455d8581a661"/>
+				<text><![CDATA[PLACE DATE OF ISSUE]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-4" y="94" width="154" height="20" forecolor="#590DFC" uuid="cce8b9fd-2386-4f8c-bed4-e95c7f0fb2ca"/>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("yyyy-MM-dd").format($F{BL_Date})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="185" y="75" width="197" height="45" forecolor="#9000FF" uuid="a2b81fbd-d6e5-437c-a517-c1336719288b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Dot Matrix" size="40"/>
+				</textElement>
+				<text><![CDATA[DRAFT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="120" width="100" height="13" forecolor="#9000FF" uuid="d9b7ba5b-3a87-4490-8021-24217102611f"/>
+				<text><![CDATA[Shipped on board]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="277" y="120" width="110" height="13" forecolor="#9000FF" uuid="c5c03c53-2948-4215-a465-ccb33088e8e9"/>
+				<textFieldExpression><![CDATA[new java.text.SimpleDateFormat("yyyy-MM-dd").format($F{ship_on_board_date})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="387" y="74" width="163" height="16" forecolor="#590DFC" uuid="42bb6bc2-b740-47b7-8aec-17afbec3edde"/>
+				<text><![CDATA[Signed on behalf of the carrier]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-11" y="146" width="574" height="40" forecolor="#590DFC" uuid="63c2bc24-f980-45a6-b241-fec38d05eab8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[RECEIVED by the carrier the good as specified above in apparent good order and condition unless otherwise stated, to be transported to such place as agreed, authorized or permitted herein and subject to all the terms and conditions appearing on the front and reverse of this Bill of Lading to which the Merchant agrees by accepting this Bill of Lading, any local privileges and customs notwithstanding.
+
+The particulars given above as stated by the shipper and weight, measure, quantity, condition, contents and value of the Goods are unknown to the Carrier.
+
+In WITNESS whereof one (1) original Bill of Lading has been signed if not otherwise stated above, the same being accomplished the other(s), if any, to be void. If required by the Carrier one (1) original Bill of Lading must be surrendered duly endorsed in exchange for the Goods or delivery order.
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="-4" y="119" width="117" height="14" forecolor="#590DFC" uuid="14159994-7629-49fc-b8e0-eff7f66ba435"/>
+				<text><![CDATA[Number of Rider Pages]]></text>
+			</staticText>
+			<textField evaluationTime="Report">
+				<reportElement x="106" y="119" width="50" height="14" forecolor="#9000FF" uuid="ec755ff1-5026-4bcf-8173-330a8dfebc1a"/>
+				<textElement textAlignment="Left">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER} - 1]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<textField>
+				<reportElement x="352" y="0" width="169" height="14" forecolor="#9000FF" uuid="ae57e9df-09e2-49c3-8d2f-379c91da77d6"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="521" y="0" width="50" height="14" uuid="34b9708e-4ea2-4e95-9af9-248f32e66c3c"/>
+				<textElement textAlignment="Left">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" of " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="23" splitType="Stretch">
+			<textField>
+				<reportElement x="104" y="-1" width="38" height="17" forecolor="#9000FF" uuid="a4df42a7-24ec-4590-b4e6-caf91ee893fe"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_COUNT}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-2" y="-1" width="112" height="17" forecolor="#590DFC" uuid="eac7d77c-e2f6-4602-870d-99c774a8bc0f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total number of units:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="336" y="-1" width="124" height="17" forecolor="#9000FF" uuid="56edf2a7-52fd-40c6-a627-f03247921ff8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Total Gross Weight (KGs)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="462" y="-1" width="100" height="17" forecolor="#590DFC" uuid="edd410ca-31c8-4e51-814a-e14dca5466e5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{gross_weight1}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
