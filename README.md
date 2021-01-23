@@ -8,15 +8,9 @@
 
 <code>
 BattleBoard bb = new BattleBoard
-            
-            {
-                                     
+            {                    
                 &nbsp;&nbsp;&nbsp;attackTry = 0, <span style="color:#2E933C">// Do not change this</span>
-                
                 &nbsp;&nbsp;&nbsp;Attempt = 20, <span style="color:#2E933C">// Edit this value to change - how many tries to attack</span>
-                
                 &nbsp;&nbsp;&nbsp;ShipCount = 2 <span style="color:#2E933C">// Edit this value to change - how many ships to be generated</span>
-                
-            };
-            
+            };  
 </code>
